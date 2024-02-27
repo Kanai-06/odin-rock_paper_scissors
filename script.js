@@ -20,32 +20,63 @@ function playRound() {
         case ("rock"):
             switch(ComputerChoice) {
                 case ("rock"):
-                    return `Draw ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Draw ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+                    return "D";
                 case ("scissors"):
-                    return `Win ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Win ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+                    return "W";
                 case ("paper"):
-                    return `Lose ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Lose ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+                    return "L";
             };
             break;
         case ("scissors"):
             switch(ComputerChoice) {
                 case ("rock"):
-                    return `Lose ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Lose ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+                    return "L";
                 case ("scissors"):
-                    return `Draw ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Draw ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+                    return "D";
                 case ("paper"):
-                    return `Win ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Win ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+                    return "W";
                     };
             break;
         case ("paper"):
             switch(ComputerChoice) {
                 case ("rock"):
-                    return `Win ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Win ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+                    return "W";
                 case ("scissors"):
-                    return `Lose ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Lose ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+                    return "L";
                 case ("paper"):
-                    return `Draw ! You : ${UserChoice} | Bot : ${ComputerChoice}.`;
+                    console.log(`Draw ! Your pick: ${UserChoice} --- Bot's pick: ${ComputerChoice}`);
+                    return "D";
             };
             break; 
+    }
+}
+
+function playGame() {
+    let ComputerScore= 0;
+    let UserScore= 0;
+
+    while((ComputerScore < 5) && (UserScore < 5)) {
+        let result= playRound();
+        if (result== "W") {
+            UserScore+= 1;
+        } else if (result== "L") {
+            ComputerScore+= 1;
+        }
+
+        alert(`Score : You= ${UserScore} --- Bot= ${ComputerScore}`)
+    }
+
+    if (ComputerScore== 5) {
+        return `Computer won the game ${ComputerScore} to ${UserScore}`
+    } else {
+        return `You won the game ${ComputerScore} to ${UserScore}`
     }
 }
