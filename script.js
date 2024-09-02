@@ -13,49 +13,20 @@ function getUserChoice() {
 }
 
 function playRound() {
-    let ComputerChoice= getComputerChoice()
-    let UserChoice= getUserChoice().toLowerCase()
+    let ComputerChoice= getComputerChoice();
+    let UserChoice= getUserChoice().toLowerCase();
 
-    switch(UserChoice) {
-        case ("rock"):
-            switch(ComputerChoice) {
-                case ("rock"):
-                    console.log(`Draw ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
-                    return "D";
-                case ("scissors"):
-                    console.log(`Win ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
-                    return "W";
-                case ("paper"):
-                    console.log(`Lose ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
-                    return "L";
-            };
-            break;
-        case ("scissors"):
-            switch(ComputerChoice) {
-                case ("rock"):
-                    console.log(`Lose ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
-                    return "L";
-                case ("scissors"):
-                    console.log(`Draw ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
-                    return "D";
-                case ("paper"):
-                    console.log(`Win ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
-                    return "W";
-                    };
-            break;
-        case ("paper"):
-            switch(ComputerChoice) {
-                case ("rock"):
-                    console.log(`Win ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
-                    return "W";
-                case ("scissors"):
-                    console.log(`Lose ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
-                    return "L";
-                case ("paper"):
-                    console.log(`Draw ! Your pick: ${UserChoice} --- Bot's pick: ${ComputerChoice}`);
-                    return "D";
-            };
-            break; 
+    if (ComputerChoice == UserChoice) {
+        console.log(`Draw ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+        return "D";
+    } else if ((UserChoice == "rock" && ComputerChoice == "scissors") || 
+    (UserChoice == "scissors" && ComputerChoice == "paper") || 
+    (UserChoice == "paper" && ComputerChoice == "rock")){
+        console.log(`Win ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+        return "W";
+    } else {
+        console.log(`Lose ! You : ${UserChoice} --- Bot : ${ComputerChoice}`);
+        return "L";
     }
 }
 
@@ -71,12 +42,12 @@ function playGame() {
             ComputerScore+= 1;
         }
 
-        alert(`Score : You= ${UserScore} --- Bot= ${ComputerScore}`)
+        alert(`Score : You= ${UserScore} --- Bot= ${ComputerScore}`);
     }
 
     if (ComputerScore== 5) {
-        return `Computer won the game ${ComputerScore} to ${UserScore}`
+        return `Computer won the game ${ComputerScore} to ${UserScore}`;
     } else {
-        return `You won the game ${ComputerScore} to ${UserScore}`
+        return `You won the game ${ComputerScore} to ${UserScore}`;
     }
 }
