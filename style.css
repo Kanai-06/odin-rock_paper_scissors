@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+  
+:root{
+    --ff1:"Nerko One", cursive;
+    --ff2: "Ubuntu", sans-serif;
+    --colorprimary:#ffc300;
+    --colorsecondary: #010101;
+    --coloraccent:#fdfdfd;
+    --colortertiary:#533e0d;
+    --colorbutton:#034efd;
+    --h1: 400 5rem var(--ff1);
+    --h2: bold 2.4rem var(--ff2);
+    --p: bold 2.074rem var(--ff2);
+}
+
+body{
+    width: 80%;
+    background-color: var(--colorprimary);
+    color: var(--colorsecondary);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    gap : 20px;
+    text-align: center;
+}
+
+h1{
+    font: var(--h1);
+}
+
+button{
+    background: var(--colorbutton); 
+    color: var(--colorsecondary); 
+    font: 18px/18px var(--ff2); 
+    padding: 12px 20px; 
+    border: solid 1px var(--coloraccent); 
+    box-shadow: 0 2px var(--coloraccent); 
+    border-radius: 8px;
+}
+
+#message{
+    font: var(--p);
+}
+
+#score{
+    display: flex;
+    width: clamp(300px,75vw, 75vw);
+    align-content: space-between;
+    align-items: end;
+}
+
+#score h2{
+    flex: 1;
+    font: var(--h2);
+    flex-shrink: 1;
+    white-space: nowrap;
+    padding: 0 15px;
+}
+
+#score img{
+    width: clamp(60px, 8vw, 300px);
+    flex: 1.5;
+}
+
+.user, .bot{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.winner{
+    padding: 12px 0px; 
+    border-radius: 8px;
+    border: solid 2px var(--coloraccent);
+    box-shadow: 0 0 26px var(--coloraccent);
+}
+
+#UserChoice{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    gap: 20px;
+    align-items: center;
+    font: var(--p);
+}
+
+#UserChoice div{
+    width: clamp(260px, 300px, 320px);
+    flex: 1;
+    background: var(--coloraccent);  
+    border-radius: 8px;
+    padding: 12px 20px; 
+    border: solid 2px var(--colortertiary); 
+    box-shadow: 0 4px var(--colortertiary); 
+}
+
+#UserChoice div:hover{
+    transform: translateY(-4px);
+}
+
+button:hover{
+    transform: translateY(-4px);
+}
+
+#UserChoice img{
+    width: clamp(200px, 20vw,260px);
+}
