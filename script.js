@@ -11,6 +11,23 @@ function getComputerChoice() {
 function playRound(UserChoice) {
     let ComputerChoice = getComputerChoice();
 
+    const user = document.querySelector(".user");
+    const bot = document.querySelector(".bot");
+
+    const UserImg = document.createElement("img");
+    UserImg.src = `img/${UserChoice}.png`;
+
+    const BotImg = document.createElement("img");
+    BotImg.src = `img/${ComputerChoice}.png`;
+
+    user.removeChild(document.querySelector(".user img"));
+    bot.removeChild(document.querySelector(".bot img"));
+
+    user.insertBefore(UserImg, document.querySelector(".user h2"));
+    bot.insertBefore(BotImg, document.querySelector(".bot h2"));
+
+
+
     if (ComputerChoice == UserChoice) {
         return "D";
     } else if ((UserChoice == "rock" && ComputerChoice == "scissors") || 
@@ -31,6 +48,18 @@ function playGame() {
     
     const user = document.querySelector(".user");
     const bot = document.querySelector(".bot");
+
+    const UserImg = document.createElement("img");
+    UserImg.src = "img/user.svg";
+
+    const BotImg = document.createElement("img");
+    BotImg.src = "img/bot.svg";
+
+    user.removeChild(document.querySelector(".user img"));
+    bot.removeChild(document.querySelector(".bot img"));
+
+    user.insertBefore(UserImg, document.querySelector(".user h2"));
+    bot.insertBefore(BotImg, document.querySelector(".bot h2"));
 
     user.classList.remove("winner");
     bot.classList.remove("winner");
